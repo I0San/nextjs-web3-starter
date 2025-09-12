@@ -21,7 +21,7 @@ NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID="Your_Project_ID" - Get at [Reown Cloud](ht
 
 - Within the service settings click the Eject button on the upstream repository
 - Clone that newly created repository locally
-- Install dependencies with 'npm install --force'
+- Install dependencies with 'npm install --legacy-peer-deps'
 - Install the Railway CLI (and login if this is your first time)
 - Run 'railway link' to link the local repository to your app on Railway
 - Start you app for local development with 'npm run dev'
