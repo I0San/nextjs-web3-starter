@@ -1,34 +1,28 @@
 "use client"
 
-import { mainnet } from "wagmi/chains"
+import { sepolia } from "wagmi/chains"
 import { WagmiProvider, createConfig, http } from "wagmi"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { ConnectKitProvider, getDefaultConfig } from "connectkit"
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
 
+const alchemyId = process.env.NEXT_PUBLIC_ALCHEMY_ID
+const rpcUrl = alchemyId 
+  ? `https://eth-sepolia.g.alchemy.com/v2/${alchemyId}`
+  : sepolia.rpcUrls.default.http[0]
+
 export const wagmiConfig = createConfig(
   getDefaultConfig({
-    // Your dApps chains
-    chains: [mainnet],
-    transports: {
-      // RPC URL for each chain
-      [mainnet.id]: http(mainnet.rpcUrls.default.http[0]), // PUBLIC RPC URL
-      // [mainnet.id]: http(
-      //   `https://eth-mainnet.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_ID}`,
-      // ),
-    },
-
-    // Required API Keys
+    chains: [ sepolia ],
+      transports: {
+        [sepolia.id]: http(rpcUrl),
+      },
     walletConnectProjectId: process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID!,
-
-    // Required App Info
-    appName: "Your App Name",
-
-    // Optional App Info
-    appDescription: "Your App Description",
-    appUrl: "https://family.co", // your app's url
-    appIcon: "https://family.co/logo.png", // your app's icon, no bigger than 1024x1024px (max. 1MB)
-  }),
+    appName: process.env.NEXT_PUBLIC_APP_NAME!,
+    appDescription: process.env.NEXT_PUBLIC_APP_DESCRIPTION!,
+    appUrl: process.env.NEXT_PUBLIC_APP_URL!,
+    appIcon: process.env.NEXT_PUBLIC_APP_ICON!,
+  })
 )
 
 const queryClient = new QueryClient()

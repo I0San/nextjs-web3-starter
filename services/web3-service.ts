@@ -41,14 +41,13 @@ export class Web3Service {
     contractConfig: WriteContractParameters & { type: 'eip1559' }
   }) {
     const { feesPerGas, maxPriorityFeePerGas } = await this.getFeeEstimates({
-      chainId: contractConfig.chainId,
+      chainId: this.chainId,
     })
 
     const internalContractConfig: WriteContractParameters = {
       ...contractConfig,
       maxFeePerGas: feesPerGas.maxFeePerGas,
       maxPriorityFeePerGas: maxPriorityFeePerGas,
-
       type: 'eip1559',
     }
 
