@@ -14,7 +14,7 @@ export const ReadPublicProperty = ({ propertyName }: Props) => {
     propertyName,
   })
 
-  const formatValue = (value: any, propertyName: string) => {
+  const formatValue = (value: string | number | bigint | undefined, propertyName: string) => {
     if (error) return 'Error'
     if (isLoading) return <span className='animate-pulse'>...</span>
     
@@ -22,7 +22,7 @@ export const ReadPublicProperty = ({ propertyName }: Props) => {
       case 'MINT_AMOUNT':
       case 'totalMinted':
       case 'totalSupply':
-        return formatEther(value) || '0'
+        return formatEther(value as bigint) || '0'
       case 'decimals':
         return value?.toString() || '0'
       case 'name':

@@ -1,9 +1,5 @@
-// import { useReadPublicProperty } from '@/queries/erc20/use-read-public-property'
 import React from 'react'
-import { Address } from 'viem'
 import { ReadPublicProperty } from './read-public-property'
-
-const contractAddress = process.env.NEXT_PUBLIC_EXAMPLE_CONTRACT as Address
 
 export const ContractInfo = () => {
   return (
