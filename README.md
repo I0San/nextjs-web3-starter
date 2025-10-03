@@ -14,13 +14,16 @@ The app is configured for a simple Railway deployment as a Service Template.
 
 Set environment variables:
 
+Required:  
 NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID="Your_Project_ID" - Get at [Reown Cloud](https://dashboard.reown.com)
-NEXT_PUBLIC_ALCHEMY_ID="Your_Alchemy_Key"
-NEXT_PUBLIC_APP_NAME="Your App Name"
-NEXT_PUBLIC_APP_DESCRIPTION="Your App Description"
-NEXT_PUBLIC_APP_URL="https://family.co"
-NEXT_PUBLIC_APP_ICON="https://family.co/logo.png"
-NEXT_PUBLIC_EXAMPLE_CONTRACT="0xf5b1c4f599DFf501f2A622E8809aF7f389394A19"
+
+Recommended:  
+NEXT_PUBLIC_ALCHEMY_ID="Your_Alchemy_Key"  
+NEXT_PUBLIC_APP_NAME="Your App Name"  
+NEXT_PUBLIC_APP_DESCRIPTION="Your App Description"  
+NEXT_PUBLIC_APP_URL="https://family.co"  
+NEXT_PUBLIC_APP_ICON="https://family.co/logo.png"  
+NEXT_PUBLIC_EXAMPLE_CONTRACT="0xf5b1c4f599DFf501f2A622E8809aF7f389394A19"  
 
 ### Link your Railway app for local development
 
