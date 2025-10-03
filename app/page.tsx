@@ -5,7 +5,6 @@ import { ConnectKitButton } from "connectkit"
 import { ReadBalance } from "./_components/read-balance"
 import { SendToken } from "./_components/send-token"
 import { MintToken } from "./_components/mint-token"
-import { ContractInfo } from "./_components/contract-info"
 import { Footer } from "@/components/@layout/footer"
 import { DeployOnRailway } from "./_components/deploy-on-railway"
 
@@ -29,7 +28,6 @@ export default function Home() {
           <MintToken />
           <SendToken />
           <ReadBalance />
-          <ContractInfo />
         </div>
 
         <DeployOnRailway />

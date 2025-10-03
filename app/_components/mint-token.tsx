@@ -1,9 +1,10 @@
 import React from 'react'
+import { toast } from 'sonner'
+import { useAccount } from 'wagmi'
 import { Button } from '@/components/ui/button'
 import { useWriteMintToken } from '@/queries/erc20/use-write-mint-token'
 import { useGetBalanceOf } from '@/queries/get-balance-of'
-import { useAccount } from 'wagmi'
-import { toast } from 'sonner'
+
 
 export const MintToken = () => {
   const { address } = useAccount()

@@ -2,7 +2,7 @@
 
 This is a Web3 [Next.js](https://nextjs.org) starter app.
 
-We use [ConnectKit](https://family.co/docs/connectkit), [Wagmi](https://wagmi.sh/), [Viem](https://viem.sh/) and [TanStack](https://tanstack.com/).
+We use [ConnectKit](https://family.co/docs/connectkit), [Wagmi](https://wagmi.sh/), [ConnectKit](https://family.co) [Viem](https://viem.sh/) and [TanStack](https://tanstack.com/).
 
 The app is configured for a simple Railway deployment as a Service Template.
 
@@ -20,7 +20,7 @@ NEXT_PUBLIC_APP_NAME="Your App Name"
 NEXT_PUBLIC_APP_DESCRIPTION="Your App Description"
 NEXT_PUBLIC_APP_URL="https://family.co"
 NEXT_PUBLIC_APP_ICON="https://family.co/logo.png"
-NEXT_PUBLIC_EXAMPLE_CONTRACT="0x202c5DeDb0B352c5D8C19B0d61481C7167cA91D0"
+NEXT_PUBLIC_EXAMPLE_CONTRACT="0xf5b1c4f599DFf501f2A622E8809aF7f389394A19"
 
 ### Link your Railway app for local development
 

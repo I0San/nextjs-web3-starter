@@ -21,6 +21,14 @@ export const Footer = () => {
       </a>
       <a
         className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+        href="https://family.co/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        ConnectKit
+      </a>
+      <a
+        className="flex items-center gap-2 hover:underline hover:underline-offset-4"
         href="https://tanstack.com/query/latest/docs/framework/react/overview"
         target="_blank"
         rel="noopener noreferrer"

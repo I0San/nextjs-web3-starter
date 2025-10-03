@@ -13,7 +13,7 @@ import { exampleContractAbi } from '@/schema/abi/example-contract-abi'
 
 type PublicPropertyName = 
   | 'MINT_AMOUNT'
-  | 'totalMinted' 
+  | 'totalReturned' 
   | 'totalSupply'
   | 'name'
   | 'symbol'
@@ -52,6 +52,7 @@ export const useReadPublicProperty = (
     queryKey: [READ_PUBLIC_PROPERTY, params],
     queryFn: () => fetch(params as Params),
     enabled: _enabled,
+    refetchInterval: 1000 * 1,
     ...restOptions
   })
 }

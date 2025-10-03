@@ -1,25 +1,26 @@
 import React from 'react'
+import { toast } from 'sonner'
+import { useAccount } from 'wagmi'
+import { Address, parseEther } from 'viem'
 import { Button } from '@/components/ui/button'
 import { useReadAllowance } from '@/queries/erc20/use-read-allowance'
 import { useApproveAllowance } from '@/queries/erc20/use-write-approve-allowance'
-import { useAccount } from 'wagmi'
-import { Address } from 'viem'
-import { toast } from 'sonner'
 import { useGetBalanceOf } from '@/queries/get-balance-of'
-import { parseEther } from 'viem'
 import { useWriteSendToken } from '@/queries/erc20/use-write-send-token'
+
 
 export const SendToken = () => {
   const { address } = useAccount()
+  const sendToken = useWriteSendToken()
+  const approveAllowance = useApproveAllowance()
   const { data: ethBalance } = useGetBalanceOf({ owner: address })
+  
   const readAllowance = useReadAllowance({
     erc20address: process.env.NEXT_PUBLIC_EXAMPLE_CONTRACT as Address,
     ownerAddress: address,
     spender: process.env.NEXT_PUBLIC_EXAMPLE_CONTRACT as Address
   })
-  const approveAllowance = useApproveAllowance()
-  const sendToken = useWriteSendToken()
-
+  
   const handleSendToken = async () => {
 
     if (ethBalance?.value && !(ethBalance.value > BigInt(0))) {
@@ -52,6 +53,8 @@ export const SendToken = () => {
   }
 
   return (
-    <Button variant="outline" size="sm" onClick={handleSendToken}>Send Token Back</Button>
+    <Button variant="outline" size="sm" onClick={handleSendToken}>
+      {sendToken.isPending ? <span className='animate-pulse'>Sending...</span> : 'Send Token Back'}
+    </Button>
   )
 } 

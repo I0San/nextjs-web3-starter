@@ -152,7 +152,7 @@ export const exampleContractAbi = [
       {
         "indexed": false,
         "internalType": "uint256",
-        "name": "totalMinted",
+        "name": "totalReturned",
         "type": "uint256"
       }
     ],
@@ -319,7 +319,7 @@ export const exampleContractAbi = [
   },
   {
     "inputs": [],
-    "name": "totalMinted",
+    "name": "totalReturned",
     "outputs": [
       {
         "internalType": "uint256",
