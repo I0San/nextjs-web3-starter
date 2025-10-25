@@ -54,7 +54,6 @@ NEXT_PUBLIC_EXAMPLE_CONTRACT="0xf5b1c4f599DFf501f2A622E8809aF7f389394A19"
 
 - Within the service settings click the Eject button on the upstream repository
 - Clone that newly created repository locally
-- Install dependencies with 'npm install --legacy-peer-deps'
 - Install the Railway CLI (and login if this is your first time)
 - Run 'railway link' to link the local repository to your app on Railway
 - Start you app for local development with 'npm run dev'
