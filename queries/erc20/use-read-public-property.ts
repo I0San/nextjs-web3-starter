@@ -3,7 +3,7 @@
  * @description Hook for reading public properties from smart contracts using wagmi
  */
 
-import { wagmiConfig } from '@/components/@web3/web3-provider'
+import { wagmiAdapter } from '@/components/@web3/web3-config'
 import { OverridableQueryOptions } from '@/schema/query'
 import { isNullish } from '@/lib/utils'
 import { useQuery } from '@tanstack/react-query'
@@ -26,7 +26,7 @@ type Params = {
 }
 
 const fetch = async (params: Params) => {
-  const result = await readContract(wagmiConfig, {
+  const result = await readContract(wagmiAdapter.wagmiConfig, {
     address: params.contractAddress,
     abi: exampleContractAbi,
     functionName: params.propertyName,

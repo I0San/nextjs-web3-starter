@@ -1,4 +1,4 @@
-import { wagmiConfig } from '@/components/@web3/web3-provider'
+import { wagmiAdapter } from '@/components/@web3/web3-config'
 import { queryClient } from '@/lib/query-client'
 import { exampleContractAbi } from '@/schema/abi/example-contract-abi'
 import { Web3Service } from '@/services/web3-service'
@@ -27,7 +27,7 @@ const write = async (params: ApproveAllowanceParams) => {
     account: params.account,
   }
 
-  const txReceipt = await new Web3Service(wagmiConfig).writeContract({
+  const txReceipt = await new Web3Service(wagmiAdapter.wagmiConfig).writeContract({
     contractConfig,
   })
 

@@ -3,7 +3,7 @@
  * @description Hook for fetching native currency or token balance.
  */
 
-import { wagmiConfig } from '@/components/@web3/web3-provider'
+import { wagmiAdapter } from '@/components/@web3/web3-config'
 import { OverridableQueryOptions } from '@/schema/query'
 import { isNullish } from '@/lib/utils'
 import { useQuery } from '@tanstack/react-query'
@@ -17,7 +17,7 @@ type Params = {
 }
 
 const fetch = async (params: Params) => {
-  const balance = await getBalance(wagmiConfig, {
+  const balance = await getBalance(wagmiAdapter.wagmiConfig, {
     address: params.owner,
     token: params?.token,
     chainId: params?.chainId,

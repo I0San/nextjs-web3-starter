@@ -7,11 +7,16 @@ import { useGetBalanceOf } from '@/queries/get-balance-of'
 
 
 export const MintToken = () => {
-  const { address } = useAccount()
+  const { address, isConnected } = useAccount()
   const { data: balance } = useGetBalanceOf({owner: address})
   const mintToken = useWriteMintToken()
 
   const handleMintToken = async () => {
+
+    if (!isConnected) {
+      toast.error('Please connect your wallet to mint the token.')
+      return
+    }
     
     if (balance?.value && !(balance.value > BigInt(0))) {
       toast.error('You need some ETH to mint the token.')
