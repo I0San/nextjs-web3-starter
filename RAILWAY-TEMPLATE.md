@@ -2,9 +2,11 @@
 
 ##  🚀 Web3 NextJS Starter
 
-This is a Web3 [Next.js](https://nextjs.org) starter app.
+DEMO: [here](https://nextjs-web3-starter.up.railway.app)
 
-We use [ConnectKit](https://family.co/docs/connectkit), [Wagmi](https://wagmi.sh/), [ConnectKit](https://family.co) [Viem](https://viem.sh/) and [TanStack](https://tanstack.com/).
+This is a Web3 [Next.js 16](https://nextjs.org) starter app.
+
+We use [Reown AppKit](https://reown.com/reown-sdk), [Wagmi](https://wagmi.sh/), [Viem](https://viem.sh/), [TanStack](https://tanstack.com/) and [Shadcn/UI](https://ui.shadcn.com).
 
 The app is configured for a simple Railway deployment as a Service Template.
 
@@ -23,9 +25,8 @@ The app is configured for a simple Railway deployment and showcases some basic s
 ## Dependencies for NextJS Web3 Starter Hosting
 
 - [Next.js](https://nextjs.org) starter app.
-- [ConnectKit](https://family.co/docs/connectkit)
+- [Reown AppKit](https://reown.com/reown-sdk)
 - [Wagmi](https://wagmi.sh/)
-- [ConnectKit](https://family.co)
 - [Viem](https://viem.sh/)
 - [TanStack](https://tanstack.com/)
 
@@ -43,7 +44,6 @@ Required:
 NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID="Your_Project_ID" - Get at [Reown Cloud](https://dashboard.reown.com)
 
 Recommended:  
-NEXT_PUBLIC_ALCHEMY_ID="Your_Alchemy_Key"  
 NEXT_PUBLIC_APP_NAME="Your App Name"  
 NEXT_PUBLIC_APP_DESCRIPTION="Your App Description"  
 NEXT_PUBLIC_APP_URL="https://family.co"  
