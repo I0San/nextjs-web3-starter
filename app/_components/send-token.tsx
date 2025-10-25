@@ -1,4 +1,3 @@
-import React from 'react'
 import { toast } from 'sonner'
 import { useAccount } from 'wagmi'
 import { Address, parseEther } from 'viem'
@@ -10,7 +9,7 @@ import { useWriteSendToken } from '@/queries/erc20/use-write-send-token'
 
 
 export const SendToken = () => {
-  const { address } = useAccount()
+  const { address, isConnected } = useAccount()
   const sendToken = useWriteSendToken()
   const approveAllowance = useApproveAllowance()
   const { data: ethBalance } = useGetBalanceOf({ owner: address })
@@ -22,6 +21,11 @@ export const SendToken = () => {
   })
   
   const handleSendToken = async () => {
+
+    if (!isConnected) {
+      toast.error('Please connect your wallet to send the token.')
+      return
+    }
 
     if (ethBalance?.value && !(ethBalance.value > BigInt(0))) {
       toast.error('You need some ETH to send the token.')

@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { ConnectKitButton } from "connectkit"
+import Web3ConnectButton from "@/components/@web3/web3-connect-button"
 import { ReadBalance } from "./_components/read-balance"
 import { SendToken } from "./_components/send-token"
 import { MintToken } from "./_components/mint-token"
@@ -22,7 +22,7 @@ export default function Home() {
           priority
         />
 
-        <ConnectKitButton />
+        <Web3ConnectButton />
 
         <div className="flex flex-col gap-4 text-sm w-full">
           <MintToken />

@@ -5,11 +5,11 @@ export const Footer = () => {
     <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
       <a
         className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-        href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+        href="https://nextjs.org/learn"
         target="_blank"
         rel="noopener noreferrer"
       >
-        NextJS
+        NextJS 16
       </a>
       <a
         className="flex items-center gap-2 hover:underline hover:underline-offset-4"
@@ -21,11 +21,11 @@ export const Footer = () => {
       </a>
       <a
         className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-        href="https://family.co/"
+        href="https://reown.com/"
         target="_blank"
         rel="noopener noreferrer"
       >
-        ConnectKit
+        Reown AppKit
       </a>
       <a
         className="flex items-center gap-2 hover:underline hover:underline-offset-4"
@@ -34,6 +34,14 @@ export const Footer = () => {
         rel="noopener noreferrer"
       >
         TanStack Query
+      </a>
+      <a
+        className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+        href="https://ui.shadcn.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Shadcn/UI
       </a>
     </footer>
   )

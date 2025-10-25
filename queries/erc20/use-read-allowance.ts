@@ -1,5 +1,4 @@
-
-import { wagmiConfig } from '@/components/@web3/web3-provider'
+import { wagmiAdapter } from '@/components/@web3/web3-config'
 import { OverridableQueryOptions } from '@/schema/query'
 import { isNullish } from '@/lib/utils'
 import { useQuery } from '@tanstack/react-query'
@@ -14,7 +13,7 @@ export type ReadAllowanceParams = {
 }
 
 const fetch = async (params: ReadAllowanceParams) => {
-  const hash = await readContract(wagmiConfig, {
+  const hash = await readContract(wagmiAdapter.wagmiConfig, {
     abi: exampleContractAbi,
     address: params.erc20address,
     functionName: 'allowance',
